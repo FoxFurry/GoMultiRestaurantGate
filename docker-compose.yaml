@@ -8,8 +8,8 @@ networks:
 services:
   kitchen:
     build:
-      context: ./components/go_kitchen/
-      dockerfile: ./components/go_kitchen/Dockerfile
+      context: ./components/go_kitchen
+      dockerfile: ./Dockerfile
     ports:
       - "8081:8081"
     expose:
@@ -18,8 +18,8 @@ services:
       - main_network
   dining:
     build:
-      context: .
-      dockerfile: ./components/go_dinning_hall/Dockerfile
+      context: ./components/go_dinning_hall
+      dockerfile: ./Dockerfile
     depends_on:
       - kitchen
     ports:
